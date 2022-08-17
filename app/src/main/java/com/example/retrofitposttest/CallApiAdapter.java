@@ -11,7 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.retrofitposttest.model.Product;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,8 +46,8 @@ public class CallApiAdapter extends RecyclerView.Adapter<CallApiAdapter.CallApiV
         holder.tvTitle.setText(product.getTitle());
         holder.tvUrl.setText(product.getUrl());
         holder.tvThumnailUrl.setText(product.getThumbnailUrl());
-        Glide.with(context).load(product.getUrl()).centerCrop().into(holder.imgProduct);
-
+//        Picasso.with(context).load(product.getUrl()).into(holder.imgProduct);
+        Picasso.get().load(product.getUrl()).into(holder.imgProduct);
     }
 
     @Override
